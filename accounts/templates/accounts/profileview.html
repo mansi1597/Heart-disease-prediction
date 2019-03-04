@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/now-ui-kit.css' %}" rel="stylesheet" />
+
+
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+
+<body class="profile-page sidebar-collapse">
+ <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400" >
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+
+
+                    <li class="nav-item">
+                        <a href="{% url 'predict:predict' pk=user_id %}" class="btn btn-neutral">Predict</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'user_login' %}"  class="btn btn-neutral">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="page-header page-header-small" filter-color="orange" style="max-height: 100px;">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('{% static 'img/image1.jpg' %}'); ">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <div class="photo-container">
+                        <img src="{{userprofileinfo.profile_pic.url}}" />
+                    </div>
+                    <h3 class="title">{{ userprofileinfo.user.username }}</h3>
+                    <p class="h5">{{ userprofileinfo.user.email }}</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="section">
+            <div class="container">
+                <div class="button-container">
+
+                        <i class="fa fa-github"></i>
+                    </a>
+
+                </div>
+            </div>
+    </div>
+    <div class="container">
+    <div class="card-header bg-warning btn-round text-white">Predictions</div>
+        <hr>
+
+
+        {% for pred in userprofileinfo.predict.all  %}
+            <br>
+
+             <div class="card card-login" style="width: 100%">
+                    <div class="card-header bg-dark text-white" style="height: 50px;"> Prediction : {{ pred.num|safe}}
+                    </div>
+                    <div class="container">
+                        <br>
+                        <p>Age: {{pred.age}}</p>
+                        <p>Sex: {{pred.sex}}</p>
+                    </div>
+                    <div class="card-footer bg-light" >Predicted on {{ pred.predicted_on }}</div>
+
+            </div>
+            <br>
+        {% endfor %}
+
+
+    </div>
+
+</body>
+<script src="{% static 'js/jquery.3.2.1.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/popper.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap_ui_kit.js' %}" type="text/javascript"></script>
+</html>

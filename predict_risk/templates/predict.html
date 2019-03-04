@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+<title>Medical Emergency Form a Responsive Widget Template :: w3layouts</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/now-ui-kit.css' %}" rel="stylesheet" />
+<link href="{% static 'css/medium-editor.min.css' %}" rel="stylesheet">
+<!--//fonts-->
+</head>
+<body>
+<!--background-->
+<nav class="navbar navbar-expand-lg navbar-transparent" >
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" >
+                <ul class="navbar-nav nav-tabs">
+
+                    <li class="nav-item"><a href="{% url 'accounts:profile' pk=user_id %}" class="btn btn-neutral">Profile</a></li>
+                      <li class="nav-item"><a href="{% url 'user_login' %}" class="btn btn-neutral">Logout</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+<h1>Predict your Heart disease</h1>
+    <div class="bg-agile">
+	<div class="book-appointment">
+	<h2>Medical Information</h2>
+
+  {% if predicted %}
+<div class="card" role="alert">
+<div class="header-main">
+{% if result %}
+<h4 class="table-danger text-center">You have a risk of heart disease</h4>
+{% else %}
+<h4 class="table-success  text-center">You do not have a risk of heart disease</h4>
+{% endif %}
+</div>
+<div class="card-body">
+      <div class="table-responsive justify-content-center">
+                       <table class="table">
+                           <thead>
+                               <tr>
+                                   <th>Algorithm</th>
+                                   <th>Risk of Heart Disease</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr class="{{colors.LR}}">
+                                   <td>Logistic Regression</td>
+                                   <td>{{predictions.LogisticRegression}}</td>
+                               </tr>
+                               <tr class={{colors.SVC}}>
+                                   <td>Support Vector Classifier</td>
+                                   <td>{{predictions.SVC}}</td>
+                               </tr>
+                               <tr class={{colors.NB}}>
+                                   <td>Naive Bayes</td>
+                                   <td>{{predictions.NaiveBayes}}</td>
+                               </tr>
+                               <tr class={{colors.DT}}>
+                                   <td>Decision Tree</td>
+                                   <td>{{predictions.DecisionTree}}</td>
+                               </tr>
+                           </tbody>
+
+                       </table>
+                   </div>
+               </div>
+             </div>
+
+  {% endif %}
+
+			<form method="post">
+        {% csrf_token %}
+        <div class="left-agileits-w3layouts same">
+          <div class="gaps">
+            <p>Age<p>
+            {{form.age}}
+          </div>
+
+					<div class="gaps">
+						<p>Gender</p>
+							{{form.sex}}
+					</div>
+
+          <div class="gaps">
+            <p>Chest Pain</p>
+              {{form.cp}}
+          </div>
+
+					<div class="gaps">
+						<p>Resting BP</p>
+							{{form.resting_bp}}
+					</div>
+
+					<div class="gaps">
+						<p>Serum Cholestrol</p>
+							{{form.serum_cholesterol}}
+					</div>
+
+					<div class="gaps">
+						<p>Fasting Blood Sugar</p>
+						   {{form.fasting_blood_sugar}}
+					</div>
+
+					<div class="gaps">
+						<p>Resting  Electrocardiographic Result</p>
+						{{form.resting_ecg}}
+					</div>
+
+					<div class="gaps">
+						<p>Maximum Heart Rate</p>
+						{{form.max_heart_rate}}
+					</div>
+
+					<div class="gaps">
+						<p>Excercise Induced Angina</p>
+						{{form.exercise_induced_angina}}
+					</div>
+
+					<div class="gaps">
+						<p>ST Depression</p>
+						{{form.st_depression}}
+					</div>
+
+				</div>
+
+				<div class="right-agileinfo same">
+
+          <div class="gaps">
+						<p>Slope of the peak exercise ST segment </p>
+				      {{form.st_slope}}
+					</div>
+
+          <div class="gaps">
+            <p>Number of major vessels (0-3) colored by flourosopy</p>
+              {{form.number_of_vessels}}
+          </div>
+
+          <div class="gaps">
+            <p>Thalium Scan Results</p>
+              {{form.thallium_scan_results}}
+          </div>
+
+				</div>
+
+				<div class="clear"></div>
+				<input type="submit" value="Predict" class="btn btn-primary">
+			</form>
+		</div>
+   </div>
+   <!--copyright-->
+
+		<!--//copyright-->
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<!-- Calendar -->
+				<link rel="stylesheet" href="css/jquery-ui.css" />
+				<script src="js/jquery-ui.js"></script>
+
+			<!-- //Calendar -->
+
+</body>
+</html>

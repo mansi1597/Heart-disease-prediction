@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+    <title>Heart disease prediction</title>
+</head>
+<body>
+	<!-- main -->
+	<div class="agileits-main">
+	<div class="w3top-nav">
+
+				<div class="w3top-nav-left">
+					<h1 style="color:white;">          Heart Disease Prediction System</h1>
+				</div>
+
+				<div class="w3top-nav-right">
+					<ul>
+						<li><a href="{% url 'about' %}">About</a></li>
+						<li><a href="{% url 'accounts:register' %}">Signup</a></li>
+						<li><a href="/admin">Admin login</a></li>
+					</ul>
+				</div>
+
+		</div>
+
+    <div class="header-main">
+		<h2>Login Now</h2>
+			<div class="header-bottom">
+				<div class="header-right w3agile">
+					<div class="header-left-bottom agileinfo">
+            <form role="form" action=" {% url 'user_login' %}" method="post">
+            {% csrf_token %}
+							<div class="icon1">
+								<input type="text" name="username" placeholder="Username" >
+							</div>
+							<div class="icon1">
+								<input type="password"  name="password" placeholder="Password"/>
+							</div>
+							<div class="bottom">
+								<input type="submit" value="Log in">
+							</div>
+					</form>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</div>
+	<!-- //main -->
+
+</body>
+
+</html>
