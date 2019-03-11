@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required,permission_required
 from django.urls import reverse
 from django.contrib import messages
 
-@login_required
+@login_required(login_url='/')
 def PredictRisk(request,pk):
     predicted = False
     predictions={}

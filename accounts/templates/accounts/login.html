@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/now-ui-kit.css' %}" rel="stylesheet" />
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
     <title>Heart disease prediction</title>
 </head>
@@ -20,6 +22,7 @@
 					<ul>
 						<li><a href="{% url 'about' %}">About</a></li>
 						<li><a href="{% url 'accounts:register' %}">Signup</a></li>
+
 						<li><a href="/admin">Admin login</a></li>
 					</ul>
 				</div>
@@ -27,7 +30,11 @@
 		</div>
 
     <div class="header-main">
-		<h2>Login Now</h2>
+      {%if user.is_authenticated %}
+        <h2>You are already logged in !!</h2>
+        <button class="btn btn-neutral"><a href="{% url 'accounts:logout'%}">Logout</a></button>
+      {%else%}
+    <h2>Login Now</h2>
 			<div class="header-bottom">
 				<div class="header-right w3agile">
 					<div class="header-left-bottom agileinfo">
@@ -50,7 +57,7 @@
 
 	</div>
 	<!-- //main -->
-
+  {% endif %}
 </body>
 
 </html>

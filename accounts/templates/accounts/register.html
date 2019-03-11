@@ -22,7 +22,12 @@
                       <ul class="navbar-nav nav-tabs">
 
                           <li class="nav-item"><a href="{% url 'about' %}" class="btn btn-neutral">About</a></li>
+
+                          {%if user.is_authenticated%}
                             <li class="nav-item"><a href="{% url 'user_login'  %}" class="btn btn-neutral">Login</a></li>
+                            {%else%}
+                            <li><a href="{% url 'accounts:logout'%}" class="btn btn-neutral">Logout</a></li>
+                            {%endif%}
                             <li class="nav-item"><a href="/admin" class="btn btn-neutral">Admin login</a></li>
 
                       </ul>

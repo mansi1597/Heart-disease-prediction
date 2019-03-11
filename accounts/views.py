@@ -9,8 +9,11 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfileInfo, User
 from django.shortcuts import get_object_or_404
 # Create your views here.
+
 @login_required
 def user_logout(request):
+    #del request.session['user_id']
+    request.session.flush()
     logout(request)
     return HttpResponseRedirect(reverse('user_login'))
 
@@ -68,6 +71,7 @@ def user_login(request):
             if user.is_active:
                 login(request, user)
                 request.session['user_id'] = user.profile.pk
+
                 return HttpResponseRedirect(reverse('predict:predict', kwargs={'pk': user.profile.pk}))
             else:
                 return HttpResponse("Account not active")
@@ -80,8 +84,8 @@ def user_login(request):
         return render(request, 'accounts/login.html', {})
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
-    login_url = '/accounts/user_login'
-    redirect_field_name = 'home'
+    login_url = '/'
+    redirect_field_name = '/'
     model = UserProfileInfo
     template_name = 'accounts/profileview.html'
 
