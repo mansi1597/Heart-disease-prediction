@@ -7,10 +7,27 @@ It supports following features:
 *	Viewing and Editing Profile 
 *	User can enter the values of various parameters on the basis of which his risk factor will be calculated using machine learning algorithms.
 
-![Login](screenshots/Login.png)
-![Signup](screenshots/Signup.png)
-![Predict risk](screenshots/prediction_page_filled.png)
+<p align="center">
+<img src="screenshots/About us.png" width="70%" height="70%" />
+</p>
 
+<p align="center">
+<img src="screenshots/Login.png" width="70%" height="70%" />
+</p>
+
+<p align="center">
+ <img src="screenshots/Signup.png" width="70%" height="70%" />
+ </p>
+ 
+ <p align="center">
+  <img src="screenshots/prediction_page_filled.png" width="70%" height="70%" />
+ </p>
+ 
+ 
+ <p align="center">
+  <img src="screenshots/prediction_result.png" width="70%" height="70%" />
+ </p>
+                                                                           
 Quick start
 -----------
 1. (optional) create virtual env ex. mkvirtualenv mytest_env
