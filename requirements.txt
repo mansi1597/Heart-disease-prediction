@@ -1,0 +1,46 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: win-64
+bzip2=1.0.6=vc14_17
+certifi=2018.1.18=py36_2
+daal=2019.2=intel_190
+daal4py=0.2019.1.1=py36_0
+django=2.1.7=py36_0
+hdf5=1.8.20=hac2f561_1
+icc_rt=2019.2=intel_190
+intel-openmp=2019.2=intel_190
+intelpython=2019.2=0
+jpeg=9b=hb83a4c4_2
+libopencv=3.4.2=h20b85fd_0
+libpng=1.6.36=vc14_2
+libtiff=4.0.9=h36446d0_2
+mkl=2019.2=intel_190
+mkl_fft=1.0.6=py36_2
+mkl_random=1.0.2=py36_0
+numpy=1.15.4=py36_2
+numpy-base=1.15.4=py36_2
+opencv=3.4.2=py36h40b0b35_0
+openssl=1.0.2r=vc14_0
+pillow=5.4.1=pypi_0
+pip=9.0.3=pypi_0
+py-opencv=3.4.2=py36hc319ecb_0
+pydot=1.4.1=pypi_0
+pyparsing=2.2.0=py36_2
+python=3.6.8=0
+python-graphviz=0.10.1=pypi_0
+pytz=2018.4=py36_3
+scikit-learn=0.20.0=py36_17
+scipy=1.1.0=np115py36_7
+setuptools=39.0.1=py36_0
+six=1.12.0=pypi_0
+sqlite=3.23.1=vc14_1
+tbb=2019.3=vc14_intel_0
+tbb4py=2019.3=py36_intel_0
+tcl=8.6.4=vc14_21
+tk=8.6.4=vc14_28
+vc=14.0=2
+vs2015_runtime=14.0.25420=intel_2
+wheel=0.31.0=py36_3
+wincertstore=0.2=py36_3
+xz=5.2.3=vc14_2
+zlib=1.2.11=vc14h21ff451_5
