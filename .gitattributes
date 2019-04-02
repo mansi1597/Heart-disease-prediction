@@ -1,4 +1,4 @@
-static/* linguist-vendored
+accounts/static/* linguist-vendored
 # Source files
 # ============
 *.pxd		text diff=python
