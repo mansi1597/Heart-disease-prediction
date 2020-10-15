@@ -16,7 +16,8 @@ dir = os.path.dirname(__file__)
 def GetJobLibFile(filepath):
     if os.path.isfile(os.path.join(dir, filepath)):
         return joblib.load(os.path.join(dir, filepath))
-    return None
+    else:
+        print("file does not exit")
 
 def GetPickleFile(filepath):
     if os.path.isfile(os.path.join(dir, filepath)):
