@@ -20,7 +20,7 @@ numpy==1.15.4
 numpy-base==1.15.4
 opencv==3.4.2
 openssl==1.0.2
-pillow==5.4.1
+pillow==8.1.1
 pip==9.0.3
 py-opencv==3.4.2
 pydot==1.4.1
