@@ -5,7 +5,7 @@ bzip2==1.0.6
 certifi==2018.1.18
 daal==2019.2
 daal4py==0.2019.1.1
-django==2.2.13
+django==2.2.22
 hdf5==1.8.20
 icc_rt==2019.2
 intel-openmp==2019.2
