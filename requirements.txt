@@ -4,7 +4,7 @@
 certifi==2018.1.18
 daal
 daal4py
-django==2.2.24
+django==2.2.27
 intel-openmp
 libopencv
 libpng-bins
