@@ -15,7 +15,7 @@ mkl-random
 numpy==1.15.4
 opencv-python
 openssl-python
-pillow==8.3.2
+pillow==9.0.1
 pip==19.2
 pydot==1.4.1
 pyparsing==2.2.0
