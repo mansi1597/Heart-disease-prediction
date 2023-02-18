@@ -31,6 +31,6 @@ tbb4py
 Tcl
 tk
 vc
-wheel==0.31.0
+wheel==0.38.1
 wincertstore==0.2
 python-xz
