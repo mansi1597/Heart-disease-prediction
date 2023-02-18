@@ -1,7 +1,7 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
-certifi==2018.1.18
+certifi==2022.12.7
 daal
 daal4py
 django==2.2.28
