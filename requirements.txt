@@ -16,7 +16,7 @@ numpy==1.15.4
 opencv-python
 openssl-python
 pillow==8.3.2
-pip==19.2
+pip==21.1
 pydot==1.4.1
 pyparsing==2.2.0
 graphviz
